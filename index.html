@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAED GUEMBRI - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="bracket">{</span> RG <span class="bracket">}</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">.home()</a></li>
+                <li><a href="#about">.about()</a></li>
+                <li><a href="#skills">.skills()</a></li>
+                <li><a href="#projects">.projects()</a></li>
+                <li><a href="#contact">.contact()</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="glitch-container">
+                <h1 class="glitch" data-text="RAED GUEMBRI">RAED GUEMBRI</h1>
+            </div>
+            <div class="typing-container">
+                <span class="static-text">I'm a </span>
+                <span class="dynamic-text"></span>
+            </div>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2><span class="hash">#</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="code-comment">// Software Engineer passionate about creating elegant solutions</p>
+                    <p>const aboutMe = {</p>
+                    <p class="indent">name: "RAED GUEMBRI",</p>
+                    <p class="indent">role: "Software Engineer",</p>
+                    <p class="indent">location: "Tunisia",</p>
+                    <p class="indent">interests: ["Web Development", "AI", "Problem Solving"]</p>
+                    <p>};</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2><span class="hash">#</span> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">TypeScript</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">Python</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Angular</div>
+                        <div class="skill-item">Vue.js</div>
+                        <div class="skill-item">HTML5</div>
+                        <div class="skill-item">CSS3</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">Express</div>
+                        <div class="skill-item">FastAPI</div>
+                        <div class="skill-item">MongoDB</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2><span class="hash">#</span> Projects</h2>
+            <div class="projects-grid">
+                <!-- Project cards will be added dynamically via JavaScript -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2><span class="hash">#</span> Contact</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p class="code-comment">// Let's work together!</p>
+                    <div class="social-links">
+                        <a href="https://github.com/raed717" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/raed-guembri-664528208/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:raed.guembri99@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 RAED GUEMBRI. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
