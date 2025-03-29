@@ -21,6 +21,7 @@
                 <li><a href="#skills">.skills()</a></li>
                 <li><a href="#projects">.projects()</a></li>
                 <li><a href="#contact">.contact()</a></li>
+                <li><a href="#resume">.resume()</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -59,35 +60,76 @@
                 </div>
             </div>
         </section>
-
         <section id="skills" class="skills">
             <h2><span class="hash">#</span> Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Languages</h3>
                     <div class="skill-items">
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">Java</div>
-                        <div class="skill-item">Python</div>
+                        <div class="skill-item">
+                            <i class="fa-brands fa-js"></i> JavaScript
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-brands fa-ts"></i> TypeScript
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-brands fa-java"></i> Java
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-brands fa-python"></i> Python
+                        </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Frontend</h3>
                     <div class="skill-items">
-                        <div class="skill-item">Angular</div>
-                        <div class="skill-item">Vue.js</div>
-                        <div class="skill-item">HTML5</div>
-                        <div class="skill-item">CSS3</div>
+                        <div class="skill-item">
+                            <i class="fab fa-angular"></i> Angular
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-vuejs"></i> Vue.js
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-brands fa-html5"></i> HTML5
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i> CSS3
+                        </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Backend</h3>
                     <div class="skill-items">
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">Express</div>
-                        <div class="skill-item">FastAPI</div>
-                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i> Node.js
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i> Express
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-rocket"></i> FastAPI
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i> MongoDB
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <h2><span class="hash">#</span> Education & Certifications</h2>
+            <div class="education-container">
+                <div class="education-timeline">
+                    <h3>Education</h3>
+                    <div class="timeline-items">
+                        <!-- Education items will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="certifications-grid">
+                    <h3>Certifications</h3>
+                    <div class="cert-items">
+                        <!-- Certification items will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -100,6 +142,26 @@
             </div>
         </section>
 
+        <section id="resume" class="resume">
+            <h2><span class="hash">#</span> Resume</h2>
+            <div class="resume-container">
+                <div class="resume-preview">
+                    <!-- Replace the src with your resume PDF URL -->
+                    <iframe 
+                        src="src/myCV.pdf" 
+                        width="100%" 
+                        height="600px" 
+                        frameborder="0">
+                    </iframe>
+                </div>
+                <div class="resume-actions">
+                    <a href="src/myCV.pdf" download class="btn primary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact">
             <h2><span class="hash">#</span> Contact</h2>
             <div class="contact-content">
@@ -109,19 +171,20 @@
                         <a href="https://github.com/raed717" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/in/raed-guembri-664528208/" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="mailto:raed.guembri99@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+21698386300"><i class="fas fa-phone"></i></a>
                     </div>
                 </div>
-                <form id="contact-form">
+                <form id="contact-form" onsubmit="handleSubmit(event)">
                     <div class="form-group">
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" required></textarea>
+                        <textarea id="message" name="message" required></textarea>
                         <label for="message">Message</label>
                     </div>
                     <button type="submit" class="btn primary">Send Message</button>
@@ -135,5 +198,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>
 </html>

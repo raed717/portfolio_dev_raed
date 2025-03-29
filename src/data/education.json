@@ -1,0 +1,47 @@
+{
+  "education": [
+    {
+      "degree": "Engineering degree in Computer Science",
+      "institution": "ESPRIT School of Engineering",
+      "location": "Tunis, Tunisia",
+      "period": "2019 - 2024",
+      "description": "Specialized in Software Engineering and Development",
+      "achievements": [
+        "Graduated with Honors",
+        "Member of the Competitive Programming Club",
+        "Led multiple student projects"
+      ],
+      "institutionLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIz35xRMeDZwRhvFLDuLK_-AG8SkBsDsx_bg&s"
+    },
+    {
+      "degree": "Bachelor's in Science and Technology",
+      "institution": "High School Med Boudhina Hammamet",
+      "location": "Hammamet, Tunisia",
+      "period": "2013 – 2017",
+      "description": "Specialized in Technological Sciences with advanced coursework in Mathematics, Analysis, and Engineering Calculations.",
+      "achievements": [
+        "Graduated with Honors (Top 10% of class)",
+        "Active Member: Robotics Club (Competition Team Lead), Social Volunteering Association"
+      ],
+      "institutionLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROzkv2wOBhb4mKT_zr9UIKEMRFRsQ9MhCFSg&s"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credentialId": "ABC123XYZ",
+      "link": "https://aws.amazon.com/certification/certified-cloud-practitioner",
+      "logo": "https://static.vecteezy.com/ti/vecteur-libre/p1/13948549-logo-google-sur-fond-blanc-transparent-gratuit-vectoriel.jpg"
+    },
+    {
+      "name": "Python for Data Science, AI & Development",
+      "issuer": "IBM",
+      "date": "2025",
+      "credentialId": "IBM123456",
+      "link": "https://www.coursera.org/account/accomplishments/verify/FY2XF04CYLWB",
+      "logo": "https://www.logo.wine/a/logo/IBM/IBM-Logo.wine.svg"
+    }
+  ]
+}

@@ -27,8 +27,6 @@ async function ensureMessagesFile() {
 
 // Handle message submissions
 app.post('/save-message', async (req, res) => {
-    console.log('Received message:', req.body);
-
     try {
         const messagesFile = await ensureMessagesFile();
         
@@ -36,7 +34,6 @@ app.post('/save-message', async (req, res) => {
         let data = { messages: [] };
         try {
             const fileContent = await fs.readFile(messagesFile, 'utf8');
-            console.log('Existing file content:', fileContent);
             data = JSON.parse(fileContent);
         } catch (error) {
             console.error('Error reading messages file:', error);
@@ -51,15 +48,9 @@ app.post('/save-message', async (req, res) => {
         };
         data.messages.push(newMessage);
         
-        console.log('Writing updated messages:', data);
-        
         // Write the updated messages back to file
-        await fs.writeFile(messagesFile, JSON.stringify(data, null, 2), {
-            encoding: 'utf8',
-            mode: 0o666 // Read/write for owner, group, and others
-        });
+        await fs.writeFile(messagesFile, JSON.stringify(data, null, 2));
         
-        console.log('Successfully wrote to messages.json');
         res.json({ success: true, message: 'Message saved successfully' });
     } catch (error) {
         console.error('Error saving message:', error);
@@ -68,15 +59,6 @@ app.post('/save-message', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-
-// Add error handling for server startup
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-}).on('error', (error) => {
-    if (error.code === 'EADDRINUSE') {
-        console.error(`Port ${PORT} is already in use. Please try a different port or stop the existing server.`);
-    } else {
-        console.error('Error starting server:', error);
-    }
-    process.exit(1);
 });

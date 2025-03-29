@@ -39,7 +39,8 @@ function typeEffect() {
 // Start typing effect
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 1000);
-    populateProjects();
+    loadProjectData(); // Changed from populateProjects()
+    loadEducationData();
 });
 
 // Smooth scrolling for navigation links
@@ -61,36 +62,19 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Project data
-const projects = [
-    {
-        title: 'HR Assistant',
-        description: 'Human Resource Assistant system for HR department to hel Agents analysing candidates profiles and interviews with AI.',
-        technologies: ['React', 'Node.js', 'MongoDB'],
-        image: 'images/HR2.png',
-        github: '#',
-        live: 'https://drive.google.com/file/d/15kMv9-dVafyeSacB4qJ7fSd2EiHoJvE8/view?usp=drive_link'
-    },
-    {
-        title: 'Job search engine',
-        description: 'Job search engine with recommendation system of required certificates and roadmaps.',
-        technologies: ['fastAPI'],
-        image: 'images/Job_search_engine.png',
-        github: '#',
-        live: '#'
-    },
-    {
-        title: 'Space Vape',
-        description: 'E-commerce website for vape accessories.',
-        technologies: ['Angular'],
-        image: 'images/space_vape.png',
-        github: '#',
-        live: '#'
-    },
-];
+// Load project data
+async function loadProjectData() {
+    try {
+        const response = await fetch('src/data/projects.json');
+        const data = await response.json();
+        populateProjects(data.projects);
+    } catch (error) {
+        console.error('Error loading project data:', error);
+    }
+}
 
-// Populate projects
-function populateProjects() {
+// Update populate projects function
+function populateProjects(projects) {
     const projectsGrid = document.querySelector('.projects-grid');
     projects.forEach(project => {
         const projectCard = document.createElement('div');
@@ -188,55 +172,6 @@ successMessage.className = 'success-message';
 successMessage.style.display = 'none';
 successMessage.innerHTML = '<p>Message sent successfully! </p>';
 
-if (contactForm) {
-    contactForm.appendChild(successMessage);
-
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value,
-            date: new Date().toISOString(),
-            time: new Date().toLocaleTimeString()
-        };
-
-        console.log('Sending form data:', formData);
-
-        try {
-            const response = await fetch('http://localhost:3000/save-message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
-
-            const responseData = await response.json();
-            console.log('Server response:', responseData);
-
-            if (response.ok) {
-                // Clear form
-                contactForm.reset();
-                
-                // Show success message
-                successMessage.style.display = 'block';
-                
-                // Hide success message after 3 seconds
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 3000);
-            } else {
-                throw new Error('Failed to send message');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Failed to send message. Please try again.');
-        }
-    });
-}
-
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1
@@ -253,3 +188,106 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
+
+// Load education data
+async function loadEducationData() {
+    try {
+        const response = await fetch('src/data/education.json');
+        const data = await response.json();
+        populateEducation(data.education);
+        populateCertifications(data.certifications);
+    } catch (error) {
+        console.error('Error loading education data:', error);
+    }
+}
+
+// Update the populateEducation function
+function populateEducation(educationData) {
+    const timelineContainer = document.querySelector('.timeline-items');
+    educationData.forEach(edu => {
+        const eduItem = document.createElement('div');
+        eduItem.className = 'education-item';
+        eduItem.innerHTML = `
+            <div class="education-header">
+                <img src="${edu.institutionLogo}" alt="${edu.institution} logo" class="institution-logo">
+                <div>
+                    <h4>${edu.degree}</h4>
+                    <p class="institution">${edu.institution}</p>
+                </div>
+            </div>
+            <p class="location">${edu.location}</p>
+            <p class="period">${edu.period}</p>
+            <p class="description">${edu.description}</p>
+            <ul class="achievements">
+                ${edu.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+            </ul>
+        `;
+        timelineContainer.appendChild(eduItem);
+    });
+}
+
+function populateCertifications(certifications) {
+    const certContainer = document.querySelector('.cert-items');
+    certifications.forEach(cert => {
+        const certCard = document.createElement('div');
+        certCard.className = 'cert-card';
+        certCard.innerHTML = `
+            <div class="cert-header">
+                <img src="${cert.logo}" alt="${cert.issuer} logo" class="cert-logo">
+                <h4>${cert.name}</h4>
+            </div>
+            <p class="issuer">${cert.issuer}</p>
+            <p class="date">${cert.date}</p>
+            <a href="${cert.link}" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        `;
+        certContainer.appendChild(certCard);
+    });
+}
+
+// Add this to your existing script.js file
+
+async function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const messageData = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/save-message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(messageData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.textContent = 'Message sent successfully!';
+            form.appendChild(successMessage);
+
+            // Clear form
+            form.reset();
+
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to send message. Please try again.');
+    }
+}
