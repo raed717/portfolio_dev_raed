@@ -28,11 +28,11 @@
   ],
   "certifications": [
     {
-      "name": "AWS Cloud Practitioner",
-      "issuer": "Amazon Web Services",
-      "date": "2023",
+      "name": "Google Prompting Essentials",
+      "issuer": "Google Career Certificates",
+      "date": "2025",
       "credentialId": "ABC123XYZ",
-      "link": "https://aws.amazon.com/certification/certified-cloud-practitioner",
+      "link": "https://www.coursera.org/learn/google-prompting-essentials",
       "logo": "https://static.vecteezy.com/ti/vecteur-libre/p1/13948549-logo-google-sur-fond-blanc-transparent-gratuit-vectoriel.jpg"
     },
     {
