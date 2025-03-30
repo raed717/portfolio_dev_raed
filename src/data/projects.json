@@ -3,7 +3,7 @@
     {
       "title": "HR Assistant",
       "description": "Human Resource Assistant system for HR department to hel Agents analysing candidates profiles and interviews with AI.",
-      "technologies": ["Angular", "Node.js", "fastAPI", "MongoDB"],
+      "technologies": ["Angular", "Node.js", "fastAPI", "MongoDB","OpenAi","AssemblyAi" ],
       "image": "images/HR2.png",
       "github": "#",
       "live": "https://drive.google.com/file/d/15kMv9-dVafyeSacB4qJ7fSd2EiHoJvE8/view?usp=drive_link",
@@ -13,7 +13,7 @@
     {
       "title": "Job search engine",
       "description": "Job search engine with recommendation system of required certificates and roadmaps.",
-      "technologies": ["fastAPI"],
+      "technologies": ["fastAPI","AiAgents","PydanticAi"],
       "image": "images/Job_search_engine.png",
       "github": "https://github.com/Keensight-AI-Building-Blocks/Meeting_Analayzer",
       "live": "#",
