@@ -3,6 +3,7 @@
     {
       "title": "HR Assistant",
       "description": "Human Resource Assistant system for HR department to hel Agents analysing candidates profiles and interviews with AI.",
+      "technologies": ["Angular", "Node.js", "MongoDB", "Python", "Flask", "OpenAi", "OpenCv", "AssemblyAi"],
       "image": "images/HR2.png",
       "github": "#",
       "live": "https://drive.google.com/file/d/15kMv9-dVafyeSacB4qJ7fSd2EiHoJvE8/view?usp=drive_link",
@@ -12,6 +13,7 @@
     {
       "title": "Job search engine",
       "description": "Job search engine with recommendation system of required certificates and roadmaps.",
+      "technologies": ["Flask", "PydanticAi", "AiAgents"],
       "image": "images/Job_search_engine.png",
       "github": "https://github.com/Keensight-AI-Building-Blocks/Meeting_Analayzer",
       "live": "#",
