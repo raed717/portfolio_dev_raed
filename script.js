@@ -1,4 +1,5 @@
 // Custom cursor
+require('dotenv').config();
 const cursor = document.querySelector('.cursor');
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
@@ -260,7 +261,7 @@ async function handleSubmit(event) {
   };
 
   try {
-    const response = await fetch('http://localhost:3000/send-email', {
+    const response = await fetch(process.env.Url_deploy,'/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
