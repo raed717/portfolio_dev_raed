@@ -90,12 +90,16 @@ function populateProjects(projects) {
                             ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
                         </div>
                         <div class="project-links">
-                            <a href="${project.github}" target="_blank" class="btn secondary">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="${project.live}" target="_blank" class="btn primary">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                            ${project.github_available ? 
+                                `<a href="${project.github}" target="_blank" class="btn secondary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>` : ''
+                            }
+                            ${project.live_available ? 
+                                `<a href="${project.live}" target="_blank" class="btn primary">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>` : ''
+                            }
                         </div>
                     </div>
                 </div>
@@ -244,50 +248,47 @@ function populateCertifications(certifications) {
     });
 }
 
-// Add this to your existing script.js file
-
+// Form submission handling
 async function handleSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
+  
+  const form = event.target;
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value
+  };
 
-    const form = event.target;
-    const formData = new FormData(form);
+  try {
+    const response = await fetch('http://localhost:3000/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
 
-    const messageData = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-    };
-
-    try {
-        const response = await fetch('http://localhost:3000/save-message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(messageData)
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.textContent = 'Message sent successfully!';
-            form.appendChild(successMessage);
-
-            // Clear form
-            form.reset();
-
-            // Remove success message after 3 seconds
-            setTimeout(() => {
-                successMessage.remove();
-            }, 3000);
-        } else {
-            throw new Error('Failed to send message');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Failed to send message. Please try again.');
+    const result = await response.json();
+    
+    if (response.ok) {
+      // Show success message
+      const successMessage = document.createElement('div');
+      successMessage.className = 'success-message';
+      successMessage.innerHTML = 'Email sent successfully!';
+      form.appendChild(successMessage);
+      
+      // Reset form
+      form.reset();
+      
+      // Remove success message after 3 seconds
+      setTimeout(() => {
+        successMessage.remove();
+      }, 3000);
+    } else {
+      throw new Error(result.message);
     }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Failed to send Email. Please try again.');
+  }
 }

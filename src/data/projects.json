@@ -6,7 +6,9 @@
       "technologies": ["Angular", "Node.js", "fastAPI", "MongoDB"],
       "image": "images/HR2.png",
       "github": "#",
-      "live": "https://drive.google.com/file/d/15kMv9-dVafyeSacB4qJ7fSd2EiHoJvE8/view?usp=drive_link"
+      "live": "https://drive.google.com/file/d/15kMv9-dVafyeSacB4qJ7fSd2EiHoJvE8/view?usp=drive_link",
+      "github_available": false,
+      "live_available": true
     },
     {
       "title": "Job search engine",
@@ -14,7 +16,9 @@
       "technologies": ["fastAPI"],
       "image": "images/Job_search_engine.png",
       "github": "https://github.com/Keensight-AI-Building-Blocks/Meeting_Analayzer",
-      "live": "#"
+      "live": "#",
+      "github_available": true,
+      "live_available": false
     },
     {
       "title": "Space Vape",
@@ -22,7 +26,9 @@
       "technologies": ["Angular"],
       "image": "images/space_vape.png",
       "github": "#",
-      "live": "#"
+      "live": "#",
+      "github_available": false,
+      "live_available": false
     }
   ]
 }
