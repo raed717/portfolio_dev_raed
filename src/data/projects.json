@@ -1,6 +1,17 @@
 {
   "projects": [
     {
+      "title": "SmarTown",
+      "description": "Web gis application for 2D and 3D maps studies and analytics.",
+      "technologies": ["Angular", "Nestjs", "Postgres", "GeoServer"],
+      "image": "images/smartown/smart1.jpg",
+      "github": "#",
+      "detailsUrl": "smartown.html",
+      "github_available": false,
+      "live_available": false,
+      "details_available": true
+    },
+    {
       "title": "HR Assistant",
       "description": "Human Resource Assistant system for HR department to hel Agents analysing candidates profiles and interviews with AI.",
       "technologies": ["Angular", "Node.js", "MongoDB", "Python", "Flask", "OpenAi", "OpenCv", "AssemblyAi"],
