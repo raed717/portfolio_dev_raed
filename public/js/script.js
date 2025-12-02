@@ -69,7 +69,7 @@ hamburger.addEventListener("click", () => {
 // Load project data
 async function loadProjectData() {
   try {
-    const response = await fetch("src/data/projects.json");
+    const response = await fetch("data/projects.json");
     const data = await response.json();
     populateProjects(data.projects);
   } catch (error) {
@@ -85,40 +85,36 @@ function populateProjects(projects) {
     projectCard.className = "project-card";
     projectCard.innerHTML = `
             <div class="project-image">
-                <img src="${project.image}" alt="${
-      project.title
-    }" class="project-img" onclick="openModal(this.src)">
+                <img src="${project.image}" alt="${project.title
+      }" class="project-img" onclick="openModal(this.src)">
                 <div class="project-overlay">
                     <div class="project-content">
                         <h3>${project.title}</h3>
                         <p>${project.description}</p>
                         <div class="project-tech">
                             ${project.technologies
-                              .map((tech) => `<span>${tech}</span>`)
-                              .join("")}
+        .map((tech) => `<span>${tech}</span>`)
+        .join("")}
                         </div>
                         <div class="project-links">
-                            ${
-                              project.github_available
-                                ? `<a href="${project.github}" target="_blank" class="btn secondary">
+                            ${project.github_available
+        ? `<a href="${project.github}" target="_blank" class="btn secondary">
                                     <i class="fab fa-github"></i> GitHub
                                 </a>`
-                                : ""
-                            }
-                            ${
-                              project.live_available
-                                ? `<a href="${project.live}" target="_blank" class="btn primary">
+        : ""
+      }
+                            ${project.live_available
+        ? `<a href="${project.live}" target="_blank" class="btn primary">
                                     <i class="fas fa-external-link-alt"></i> Live Demo
                                 </a>`
-                                : ""
-                            }
-                                                        ${
-                                                          project.details_available
-                                                            ? `<a href="${project.detailsUrl}" target="_blank" class="btn primary">
+        : ""
+      }
+                                                        ${project.details_available
+        ? `<a href="${project.detailsUrl}" target="_blank" class="btn primary">
                                     <i class="fas fa-external-link-alt"></i> Details
                                 </a>`
-                                                            : ""
-                                                        }
+        : ""
+      }
                         </div>
                     </div>
                 </div>
@@ -215,7 +211,7 @@ document.querySelectorAll("section").forEach((section) => {
 // Load education data
 async function loadEducationData() {
   try {
-    const response = await fetch("src/data/education.json");
+    const response = await fetch("data/education.json");
     const data = await response.json();
     populateEducation(data.education);
     populateCertifications(data.certifications);
@@ -232,9 +228,8 @@ function populateEducation(educationData) {
     eduItem.className = "education-item";
     eduItem.innerHTML = `
             <div class="education-header">
-                <img src="${edu.institutionLogo}" alt="${
-      edu.institution
-    } logo" class="institution-logo">
+                <img src="${edu.institutionLogo}" alt="${edu.institution
+      } logo" class="institution-logo">
                 <div>
                     <h4>${edu.degree}</h4>
                     <p class="institution">${edu.institution}</p>
@@ -245,8 +240,8 @@ function populateEducation(educationData) {
             <p class="description">${edu.description}</p>
             <ul class="achievements">
                 ${edu.achievements
-                  .map((achievement) => `<li>${achievement}</li>`)
-                  .join("")}
+        .map((achievement) => `<li>${achievement}</li>`)
+        .join("")}
             </ul>
         `;
     timelineContainer.appendChild(eduItem);
