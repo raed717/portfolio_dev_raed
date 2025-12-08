@@ -12,6 +12,16 @@
       "details_available": true
     },
     {
+      "title":"Iron Log",
+      "description": "web application to track your workouts and monitor your progress over time.",
+      "technologies": ["react", "vite", "Supabase"],
+      "image": "assets/images/ironlog.png",
+      "github": "https://github.com/raed717/iron-log-94-main",
+      "live": "https://iron-log-ruddy.vercel.app/",
+      "github_available": true,
+      "live_available": true
+    },
+    {
       "title": "HR Assistant",
       "description": "Human Resource Assistant system for HR department to hel Agents analysing candidates profiles and interviews with AI.",
       "technologies": ["Angular", "Node.js", "MongoDB", "Python", "Flask", "OpenAi", "OpenCv", "AssemblyAi"],
