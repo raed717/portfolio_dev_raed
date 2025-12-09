@@ -12,7 +12,7 @@
       "details_available": true
     },
     {
-      "title":"Iron Log",
+      "title": "Iron Log",
       "description": "web application to track your workouts and monitor your progress over time.",
       "technologies": ["react", "vite", "Supabase"],
       "image": "assets/images/ironlog.png",
@@ -22,9 +22,27 @@
       "live_available": true
     },
     {
+      "title": "Albania Booking",
+      "description": "A web application for booking hotels, hotels, cars and accommodations in Albania.(this project is still under development).",
+      "technologies": ["react", "vite", "Supabase"],
+      "image": "assets/images/Albania.png",
+      "github": "https://github.com/raed717/iron-log-94-main",
+      "live": "https://visit-albania.vercel.app/",
+      "live_available": true
+    },
+    {
       "title": "HR Assistant",
       "description": "Human Resource Assistant system for HR department to hel Agents analysing candidates profiles and interviews with AI.",
-      "technologies": ["Angular", "Node.js", "MongoDB", "Python", "Flask", "OpenAi", "OpenCv", "AssemblyAi"],
+      "technologies": [
+        "Angular",
+        "Node.js",
+        "MongoDB",
+        "Python",
+        "Flask",
+        "OpenAi",
+        "OpenCv",
+        "AssemblyAi"
+      ],
       "image": "assets/images/HR2.png",
       "github": "#",
       "live": "https://drive.google.com/file/d/15kMv9-dVafyeSacB4qJ7fSd2EiHoJvE8/view?usp=drive_link",
