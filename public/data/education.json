@@ -42,6 +42,14 @@
       "credentialId": "IBM123456",
       "link": "https://www.coursera.org/account/accomplishments/verify/FY2XF04CYLWB",
       "logo": "https://www.logo.wine/a/logo/IBM/IBM-Logo.wine.svg"
+    },
+    {
+      "name": "Claude Code in Action",
+      "issuer": "ANTHROPIC",
+      "date": "2026",
+      "credentialId": "ANTHROPIC123",
+      "link": "http://verify.skilljar.com/c/hv7iniuevkjv",
+      "logo": "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/anthropic-icon-wii9u8ifrjrd99btrqfgi.png/anthropic-icon-tdvkiqisswbrmtkiygb0ia.png?_a=DATAiZAAZAA0"
     }
   ]
 }
